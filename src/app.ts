@@ -5,22 +5,13 @@ import { ClientCodeData } from './types'
 const app: Application = express()
 app.use(express.json())
 
-// // knative hello world
-// app.get('/', (req: Request, res: Response, next: NextFunction) => {
-  // console.log('/ received a request')
-  // 
-  // const target: string = process.env.TARGET || 'World'
-  // res.send(`Hello ${target}!\n`)
-// })
-
 
 // POST request with 
 app.post('/test', (req: Request, res: Response) => {
   console.log(req.body)
+  // retrieve the client body
   const body: ClientCodeData = req.body;
-  
-
-  
+  console.log(`Got ${body.language}: ${body.testDescription}`)
   res.sendStatus(200)
 })
 

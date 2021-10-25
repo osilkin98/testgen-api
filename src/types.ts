@@ -3,7 +3,7 @@
 // type to represent test data body
 type ClientCodeData = {
   code: string,
-  language: string, // enumerate this
+  language: string,
   testDescription: string,
   buildPrompt?: () => string,
 }
