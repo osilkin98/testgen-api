@@ -2,21 +2,26 @@ name: Test
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     name: "Test the repo"
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
     steps:
       - name: Fetch
         uses: actions/checkout@v2
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: ${{ matrix.node-version }}
       - name: Install Project
         run: npm install
       - name: Run Unit Tests
