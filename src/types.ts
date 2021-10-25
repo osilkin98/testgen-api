@@ -4,7 +4,8 @@
 type ClientCodeData = {
   code: string,
   language: string, // enumerate this
-  testDescription: string
+  testDescription: string,
+  buildPrompt?: () => string,
 }
 
 export { ClientCodeData };

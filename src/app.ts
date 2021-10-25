@@ -1,4 +1,5 @@
 import express, {Request, Application, Response } from 'express'
+import { ClientCodeData } from './types'
 
 // setup the express app
 const app: Application = express()
@@ -16,6 +17,9 @@ app.use(express.json())
 // POST request with 
 app.post('/test', (req: Request, res: Response) => {
   console.log(req.body)
+  const body: ClientCodeData = req.body;
+  
+
   
   res.sendStatus(200)
 })
