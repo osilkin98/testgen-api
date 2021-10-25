@@ -6,7 +6,6 @@ const app: Application = express()
 app.use(express.json())
 
 
-
 // POST request with 
 app.post('/test', (req: Request, res: Response) => {
   console.log(req.body)
