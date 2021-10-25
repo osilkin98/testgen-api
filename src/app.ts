@@ -10,7 +10,9 @@ app.use(express.json())
 // POST request with 
 app.post('/test', (req: Request, res: Response) => {
   console.log(req.body)
+  // retrieve the client body
   const body: ClientCodeData = req.body;
+  console.log(`Got ${body.language}: ${body.testDescription}`)
   res.sendStatus(200)
 })
 
