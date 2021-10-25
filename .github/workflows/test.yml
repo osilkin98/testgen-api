@@ -24,8 +24,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install Project
         run: npm install
-      - name: Run Unit Tests
-        run: npm test
+      - name: Run Unit Tests & Generate Coverage
+        run: npm coverage
       - name: Upload coverage data
         uses: codecov/codecov-action@v2
         with:
